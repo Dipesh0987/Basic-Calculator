@@ -6,7 +6,10 @@
     <title>Premium Calculator Layout</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -26,49 +29,175 @@
       };
     </script>
   </head>
-  <body class="min-h-screen bg-gradient-to-b from-slate-100 via-slate-200 to-slate-300 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 flex items-center justify-center p-4 sm:p-6 font-sora transition-colors duration-500">
+  <body
+    class="min-h-screen bg-gradient-to-b from-slate-100 via-slate-200 to-slate-300 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 flex items-center justify-center p-4 sm:p-6 font-sora transition-colors duration-500"
+  >
     <div class="pointer-events-none absolute inset-0 overflow-hidden">
-      <div class="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-cyan-200/30 blur-3xl dark:bg-cyan-500/10"></div>
-      <div class="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-orange-200/40 blur-3xl dark:bg-orange-500/15"></div>
+      <div
+        class="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-cyan-200/30 blur-3xl dark:bg-cyan-500/10"
+      ></div>
+      <div
+        class="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-orange-200/40 blur-3xl dark:bg-orange-500/15"
+      ></div>
     </div>
-    <main class="relative w-[360px] max-w-full h-[760px] rounded-[46px] bg-gradient-to-br from-slate-200 via-slate-100 to-white dark:from-slate-800 dark:via-slate-900 dark:to-slate-950 text-slate-900 dark:text-white pt-6 pb-7 px-5 shadow-panel overflow-hidden transition-colors duration-500 [&_button]:transition-all [&_button]:duration-300 [&_button]:ease-out [&_button]:hover:-translate-y-0.5 [&_button]:hover:scale-[1.02] [&_button]:active:translate-y-0 [&_button]:active:scale-95">
-      <div class="pointer-events-none absolute inset-0 rounded-[46px] bg-[radial-gradient(circle_at_78%_90%,rgba(255,136,0,0.22),transparent_40%),radial-gradient(circle_at_10%_0%,rgba(148,163,184,0.16),transparent_45%)] dark:bg-[radial-gradient(circle_at_78%_90%,rgba(255,136,0,0.18),transparent_40%),radial-gradient(circle_at_10%_0%,rgba(148,163,184,0.18),transparent_45%)]"></div>
+    <main
+      class="relative w-[360px] max-w-full h-[760px] rounded-[46px] bg-gradient-to-br from-slate-200 via-slate-100 to-white dark:from-slate-800 dark:via-slate-900 dark:to-slate-950 text-slate-900 dark:text-white pt-6 pb-7 px-5 shadow-panel overflow-hidden transition-colors duration-500 [&_button]:transition-all [&_button]:duration-300 [&_button]:ease-out [&_button]:hover:-translate-y-0.25 [&_button]:hover:scale-[1.01] [&_button]:active:translate-y-0 [&_button]:active:scale-95"
+    >
+      <div
+        class="pointer-events-none absolute inset-0 rounded-[46px] bg-[radial-gradient(circle_at_78%_90%,rgba(255,136,0,0.22),transparent_40%),radial-gradient(circle_at_10%_0%,rgba(148,163,184,0.16),transparent_45%)] dark:bg-[radial-gradient(circle_at_78%_90%,rgba(255,136,0,0.18),transparent_40%),radial-gradient(circle_at_10%_0%,rgba(148,163,184,0.18),transparent_45%)]"
+      ></div>
       <header class="flex items-start justify-between">
-        <button class="relative z-10 h-14 w-14 rounded-2xl bg-gradient-to-b from-slate-300/80 to-slate-500/70 text-slate-700 dark:from-slate-500/60 dark:to-slate-700/70 dark:text-slate-100 shadow-soft transition-colors duration-500">🎤</button>
-        <button id="themeToggle" class="relative z-10 h-10 px-4 rounded-xl bg-white/70 dark:bg-white/10 text-slate-700 dark:text-slate-100 border border-slate-300/60 dark:border-white/10 backdrop-blur-md shadow-soft transition-colors duration-500">
+        <button
+          class="relative z-10 h-14 w-14 rounded-2xl bg-gradient-to-b from-slate-300/80 to-slate-500/70 text-slate-700 dark:from-slate-500/60 dark:to-slate-700/70 dark:text-slate-100 shadow-soft transition-colors duration-500"
+        >
+          🎤
+        </button>
+        <button
+          id="themeToggle"
+          class="relative z-10 h-10 px-4 rounded-xl bg-white/70 dark:bg-white/10 text-slate-700 dark:text-slate-100 border border-slate-300/60 dark:border-white/10 backdrop-blur-md shadow-soft transition-colors duration-500"
+        >
           <span id="themeIcon">☀️</span>
         </button>
       </header>
 
       <section class="relative z-10 mt-14 text-right">
-        <p id="expressionDisplay" class="text-slate-500 dark:text-slate-400 text-[34px] leading-none tracking-tight transition-colors duration-500">0</p>
-        <p id="resultDisplay" class="text-[72px] font-light leading-[1.05] mt-2 tracking-tight">0</p>
+        <p
+          id="expressionDisplay"
+          class="text-slate-500 dark:text-slate-400 text-[34px] leading-none tracking-tight transition-colors duration-500"
+        >
+          0
+        </p>
+        <p
+          id="resultDisplay"
+          class="text-[72px] font-light leading-[1.05] mt-2 tracking-tight"
+        >
+          0
+        </p>
       </section>
 
       <section class="relative z-10 mt-8 grid grid-cols-4 gap-3">
-        <button data-action="clear" class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-slate-300/90 to-slate-500/80 text-[34px] dark:from-slate-500/80 dark:to-slate-700/80 shadow-soft transition-colors duration-500 hover:brightness-110">C</button>
-        <button data-action="unsupported" class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-slate-300/90 to-slate-500/80 text-[30px] dark:from-slate-500/80 dark:to-slate-700/80 shadow-soft transition-colors duration-500 hover:brightness-110">+/-</button>
-        <button data-action="unsupported" class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-slate-300/90 to-slate-500/80 text-[34px] dark:from-slate-500/80 dark:to-slate-700/80 shadow-soft transition-colors duration-500 hover:brightness-110">%</button>
-        <button data-action="unsupported" class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-amber-500 to-orange-500 text-[42px] shadow-ember hover:shadow-[0_12px_34px_rgba(255,152,25,0.58)] hover:brightness-110">÷</button>
+        <button
+          data-action="clear"
+          class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-slate-300/90 to-slate-500/80 text-[34px] dark:from-slate-500/80 dark:to-slate-700/80 shadow-soft transition-colors duration-500 hover:brightness-105"
+        >
+          C
+        </button>
+        <button
+          data-action="unsupported"
+          class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-slate-300/90 to-slate-500/80 text-[30px] dark:from-slate-500/80 dark:to-slate-700/80 shadow-soft transition-colors duration-500 hover:brightness-105"
+        >
+          +/-
+        </button>
+        <button
+          data-action="unsupported"
+          class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-slate-300/90 to-slate-500/80 text-[34px] dark:from-slate-500/80 dark:to-slate-700/80 shadow-soft transition-colors duration-500 hover:brightness-105"
+        >
+          %
+        </button>
+        <button
+          data-action="operator"
+          data-operator="/"
+          class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-amber-500 to-orange-500 text-[42px] shadow-ember hover:shadow-[0_8px_24px_rgba(255,152,25,0.4)] hover:brightness-105"
+        >
+          ÷
+        </button>
 
-        <button data-value="7" class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-slate-200/95 to-slate-400/90 text-[34px] dark:from-slate-700/90 dark:to-slate-900/90 shadow-soft transition-colors duration-500 hover:brightness-110">7</button>
-        <button data-value="8" class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-slate-200/95 to-slate-400/90 text-[34px] dark:from-slate-700/90 dark:to-slate-900/90 shadow-soft transition-colors duration-500 hover:brightness-110">8</button>
-        <button data-value="9" class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-slate-200/95 to-slate-400/90 text-[34px] dark:from-slate-700/90 dark:to-slate-900/90 shadow-soft transition-colors duration-500 hover:brightness-110">9</button>
-        <button data-action="unsupported" class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-amber-500 to-orange-500 text-[42px] shadow-ember hover:shadow-[0_12px_34px_rgba(255,152,25,0.58)] hover:brightness-110">×</button>
+        <button
+          data-value="7"
+          class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-slate-200/95 to-slate-400/90 text-[34px] dark:from-slate-700/90 dark:to-slate-900/90 shadow-soft transition-colors duration-500 hover:brightness-105"
+        >
+          7
+        </button>
+        <button
+          data-value="8"
+          class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-slate-200/95 to-slate-400/90 text-[34px] dark:from-slate-700/90 dark:to-slate-900/90 shadow-soft transition-colors duration-500 hover:brightness-105"
+        >
+          8
+        </button>
+        <button
+          data-value="9"
+          class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-slate-200/95 to-slate-400/90 text-[34px] dark:from-slate-700/90 dark:to-slate-900/90 shadow-soft transition-colors duration-500 hover:brightness-105"
+        >
+          9
+        </button>
+        <button
+          data-action="operator"
+          data-operator="*"
+          class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-amber-500 to-orange-500 text-[42px] shadow-ember hover:shadow-[0_8px_24px_rgba(255,152,25,0.4)] hover:brightness-105"
+        >
+          ×
+        </button>
 
-        <button data-value="4" class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-slate-200/95 to-slate-400/90 text-[34px] dark:from-slate-700/90 dark:to-slate-900/90 shadow-soft transition-colors duration-500 hover:brightness-110">4</button>
-        <button data-value="5" class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-slate-200/95 to-slate-400/90 text-[34px] dark:from-slate-700/90 dark:to-slate-900/90 shadow-soft transition-colors duration-500 hover:brightness-110">5</button>
-        <button data-value="6" class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-slate-200/95 to-slate-400/90 text-[34px] dark:from-slate-700/90 dark:to-slate-900/90 shadow-soft transition-colors duration-500 hover:brightness-110">6</button>
-        <button data-action="operator" data-operator="-" class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-amber-500 to-orange-500 text-[42px] shadow-ember hover:shadow-[0_12px_34px_rgba(255,152,25,0.58)] hover:brightness-110">−</button>
+        <button
+          data-value="4"
+          class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-slate-200/95 to-slate-400/90 text-[34px] dark:from-slate-700/90 dark:to-slate-900/90 shadow-soft transition-colors duration-500 hover:brightness-105"
+        >
+          4
+        </button>
+        <button
+          data-value="5"
+          class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-slate-200/95 to-slate-400/90 text-[34px] dark:from-slate-700/90 dark:to-slate-900/90 shadow-soft transition-colors duration-500 hover:brightness-105"
+        >
+          5
+        </button>
+        <button
+          data-value="6"
+          class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-slate-200/95 to-slate-400/90 text-[34px] dark:from-slate-700/90 dark:to-slate-900/90 shadow-soft transition-colors duration-500 hover:brightness-105"
+        >
+          6
+        </button>
+        <button
+          data-action="operator"
+          data-operator="-"
+          class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-amber-500 to-orange-500 text-[42px] shadow-ember hover:shadow-[0_8px_24px_rgba(255,152,25,0.4)] hover:brightness-105"
+        >
+          −
+        </button>
 
-        <button data-value="1" class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-slate-200/95 to-slate-400/90 text-[34px] dark:from-slate-700/90 dark:to-slate-900/90 shadow-soft transition-colors duration-500 hover:brightness-110">1</button>
-        <button data-value="2" class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-slate-200/95 to-slate-400/90 text-[34px] dark:from-slate-700/90 dark:to-slate-900/90 shadow-soft transition-colors duration-500 hover:brightness-110">2</button>
-        <button data-value="3" class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-slate-200/95 to-slate-400/90 text-[34px] dark:from-slate-700/90 dark:to-slate-900/90 shadow-soft transition-colors duration-500 hover:brightness-110">3</button>
-        <button data-action="operator" data-operator="+" class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-amber-500 to-orange-500 text-[42px] shadow-ember hover:shadow-[0_12px_34px_rgba(255,152,25,0.58)] hover:brightness-110">+</button>
+        <button
+          data-value="1"
+          class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-slate-200/95 to-slate-400/90 text-[34px] dark:from-slate-700/90 dark:to-slate-900/90 shadow-soft transition-colors duration-500 hover:brightness-105"
+        >
+          1
+        </button>
+        <button
+          data-value="2"
+          class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-slate-200/95 to-slate-400/90 text-[34px] dark:from-slate-700/90 dark:to-slate-900/90 shadow-soft transition-colors duration-500 hover:brightness-105"
+        >
+          2
+        </button>
+        <button
+          data-value="3"
+          class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-slate-200/95 to-slate-400/90 text-[34px] dark:from-slate-700/90 dark:to-slate-900/90 shadow-soft transition-colors duration-500 hover:brightness-105"
+        >
+          3
+        </button>
+        <button
+          data-action="operator"
+          data-operator="+"
+          class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-amber-500 to-orange-500 text-[42px] shadow-ember hover:shadow-[0_8px_24px_rgba(255,152,25,0.4)] hover:brightness-105"
+        >
+          +
+        </button>
 
-        <button data-value="0" class="calc-key h-[74px] col-span-2 rounded-[26px] bg-gradient-to-r from-slate-200/95 to-slate-400/90 text-[34px] dark:from-slate-700/95 dark:to-slate-900/95 shadow-soft transition-colors duration-500 hover:brightness-110">0</button>
-        <button data-value="." class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-slate-300/90 to-slate-500/80 text-[42px] dark:from-slate-500/80 dark:to-slate-700/80 shadow-soft transition-colors duration-500 hover:brightness-110">.</button>
-        <button data-action="equals" class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-amber-500 to-orange-500 text-[42px] shadow-ember hover:shadow-[0_12px_34px_rgba(255,152,25,0.58)] hover:brightness-110">=</button>
+        <button
+          data-value="0"
+          class="calc-key h-[74px] col-span-2 rounded-[26px] bg-gradient-to-r from-slate-200/95 to-slate-400/90 text-[34px] dark:from-slate-700/95 dark:to-slate-900/95 shadow-soft transition-colors duration-500 hover:brightness-105"
+        >
+          0
+        </button>
+        <button
+          data-value="."
+          class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-slate-300/90 to-slate-500/80 text-[42px] dark:from-slate-500/80 dark:to-slate-700/80 shadow-soft transition-colors duration-500 hover:brightness-105"
+        >
+          .
+        </button>
+        <button
+          data-action="equals"
+          class="calc-key h-[74px] rounded-[26px] bg-gradient-to-b from-amber-500 to-orange-500 text-[42px] shadow-ember hover:shadow-[0_8px_24px_rgba(255,152,25,0.4)] hover:brightness-105"
+        >
+          =
+        </button>
       </section>
     </main>
 

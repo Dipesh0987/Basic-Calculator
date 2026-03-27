@@ -32,7 +32,15 @@ const renderCalculator = () => {
   const left = calculatorState.leftOperand;
   const right = calculatorState.rightOperand;
   const op = calculatorState.operator;
-  const operatorLabel = op === "-" ? "-" : op;
+  let operatorLabel = op;
+
+  if (op === "-") {
+    operatorLabel = "−";
+  } else if (op === "*") {
+    operatorLabel = "×";
+  } else if (op === "/") {
+    operatorLabel = "÷";
+  }
 
   if (op) {
     const leftText = formatDisplayNumber(left);
@@ -40,7 +48,9 @@ const renderCalculator = () => {
     const rightText = formatDisplayNumber(rightSource);
     expressionDisplay.textContent = `${leftText} ${operatorLabel} ${rightText}`;
   } else {
-    expressionDisplay.textContent = formatDisplayNumber(calculatorState.currentInput);
+    expressionDisplay.textContent = formatDisplayNumber(
+      calculatorState.currentInput,
+    );
   }
 
   resultDisplay.textContent = formatDisplayNumber(calculatorState.currentInput);
@@ -53,6 +63,17 @@ const applyOperation = (left, operator, right) => {
 
   if (operator === "-") {
     return left - right;
+  }
+
+  if (operator === "*") {
+    return left * right;
+  }
+
+  if (operator === "/") {
+    if (right === 0) {
+      return "Error"; // Handle division by zero
+    }
+    return left / right;
   }
 
   return right;
@@ -94,7 +115,11 @@ const applyOperator = (nextOperator) => {
   if (calculatorState.leftOperand === null) {
     calculatorState.leftOperand = currentValue;
   } else if (calculatorState.operator && !calculatorState.justEvaluated) {
-    const computed = applyOperation(calculatorState.leftOperand, calculatorState.operator, currentValue);
+    const computed = applyOperation(
+      calculatorState.leftOperand,
+      calculatorState.operator,
+      currentValue,
+    );
     calculatorState.leftOperand = computed;
     calculatorState.currentInput = String(computed);
   }
@@ -111,7 +136,11 @@ const evaluate = () => {
   }
 
   const right = Number(calculatorState.currentInput);
-  const computed = applyOperation(calculatorState.leftOperand, calculatorState.operator, right);
+  const computed = applyOperation(
+    calculatorState.leftOperand,
+    calculatorState.operator,
+    right,
+  );
 
   calculatorState.rightOperand = right;
   calculatorState.leftOperand = computed;
