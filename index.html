@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Premium Calculator Layout</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
+  </head>
+  <body class="min-h-screen bg-slate-200 dark:bg-slate-900 flex items-center justify-center p-6">
+    <main class="relative w-[360px] max-w-full h-[760px] rounded-[46px] bg-slate-900 text-white p-5">
+      <header class="flex items-start justify-between">
+        <button class="h-14 w-14 rounded-2xl bg-slate-700/60">mic</button>
+        <button id="themeToggle" class="h-10 px-4 rounded-xl bg-slate-700/50">Theme</button>
+      </header>
+
+      <section class="mt-16 text-right">
+        <p class="text-slate-400 text-3xl">4,900 + 15,910</p>
+        <p class="text-7xl font-light mt-2">20,810</p>
+      </section>
+
+      <section class="mt-10 grid grid-cols-4 gap-3">
+        <button class="h-20 rounded-3xl bg-slate-700/60 text-4xl">C</button>
+        <button class="h-20 rounded-3xl bg-slate-700/60 text-4xl">+/-</button>
+        <button class="h-20 rounded-3xl bg-slate-700/60 text-4xl">%</button>
+        <button class="h-20 rounded-3xl bg-orange-500 text-5xl">÷</button>
+
+        <button class="h-20 rounded-3xl bg-slate-800/80 text-4xl">7</button>
+        <button class="h-20 rounded-3xl bg-slate-800/80 text-4xl">8</button>
+        <button class="h-20 rounded-3xl bg-slate-800/80 text-4xl">9</button>
+        <button class="h-20 rounded-3xl bg-orange-500 text-5xl">×</button>
+
+        <button class="h-20 rounded-3xl bg-slate-800/80 text-4xl">4</button>
+        <button class="h-20 rounded-3xl bg-slate-800/80 text-4xl">5</button>
+        <button class="h-20 rounded-3xl bg-slate-800/80 text-4xl">6</button>
+        <button class="h-20 rounded-3xl bg-orange-500 text-5xl">−</button>
+
+        <button class="h-20 rounded-3xl bg-slate-800/80 text-4xl">1</button>
+        <button class="h-20 rounded-3xl bg-slate-800/80 text-4xl">2</button>
+        <button class="h-20 rounded-3xl bg-slate-800/80 text-4xl">3</button>
+        <button class="h-20 rounded-3xl bg-orange-500 text-5xl">+</button>
+
+        <button class="h-20 col-span-2 rounded-3xl bg-slate-800/80 text-4xl">0</button>
+        <button class="h-20 rounded-3xl bg-slate-700/70 text-5xl">.</button>
+        <button class="h-20 rounded-3xl bg-orange-500 text-5xl">=</button>
+      </section>
+    </main>
+
+    <script>
+      const root = document.documentElement;
+      const toggle = document.getElementById("themeToggle");
+      toggle.addEventListener("click", () => {
+        root.classList.toggle("dark");
+      });
+    </script>
+  </body>
+</html>
