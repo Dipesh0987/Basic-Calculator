@@ -4,49 +4,69 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Premium Calculator Layout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sora: ["Sora", "sans-serif"],
+            },
+            boxShadow: {
+              panel: "0 35px 80px rgba(9, 12, 22, 0.45)",
+              soft: "inset 0 1px 0 rgba(255,255,255,0.08), 0 8px 22px rgba(0,0,0,0.25)",
+              ember: "0 8px 24px rgba(255, 152, 25, 0.45)",
+            },
+          },
+        },
       };
     </script>
   </head>
-  <body class="min-h-screen bg-slate-200 dark:bg-slate-900 flex items-center justify-center p-6">
-    <main class="relative w-[360px] max-w-full h-[760px] rounded-[46px] bg-slate-900 text-white p-5">
+  <body class="min-h-screen bg-gradient-to-b from-slate-100 via-slate-200 to-slate-300 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 flex items-center justify-center p-6 font-sora transition-colors duration-500">
+    <div class="pointer-events-none absolute inset-0 overflow-hidden">
+      <div class="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-cyan-200/30 blur-3xl dark:bg-cyan-500/10"></div>
+      <div class="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-orange-200/40 blur-3xl dark:bg-orange-500/15"></div>
+    </div>
+    <main class="relative w-[360px] max-w-full h-[760px] rounded-[46px] bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 text-white p-5 shadow-panel overflow-hidden">
+      <div class="pointer-events-none absolute inset-0 rounded-[46px] bg-[radial-gradient(circle_at_78%_90%,rgba(255,136,0,0.18),transparent_40%),radial-gradient(circle_at_10%_0%,rgba(148,163,184,0.18),transparent_45%)]"></div>
       <header class="flex items-start justify-between">
-        <button class="h-14 w-14 rounded-2xl bg-slate-700/60">mic</button>
-        <button id="themeToggle" class="h-10 px-4 rounded-xl bg-slate-700/50">Theme</button>
+        <button class="relative z-10 h-14 w-14 rounded-2xl bg-gradient-to-b from-slate-500/60 to-slate-700/70 text-slate-100 shadow-soft">🎤</button>
+        <button id="themeToggle" class="relative z-10 h-10 px-4 rounded-xl bg-white/10 text-slate-100 border border-white/10 backdrop-blur-md shadow-soft">Theme</button>
       </header>
 
-      <section class="mt-16 text-right">
-        <p class="text-slate-400 text-3xl">4,900 + 15,910</p>
-        <p class="text-7xl font-light mt-2">20,810</p>
+      <section class="relative z-10 mt-16 text-right">
+        <p class="text-slate-400 text-[34px] leading-none tracking-tight">4,900 + 15,910</p>
+        <p class="text-[72px] font-light leading-[1.05] mt-2 tracking-tight">20,810</p>
       </section>
 
-      <section class="mt-10 grid grid-cols-4 gap-3">
-        <button class="h-20 rounded-3xl bg-slate-700/60 text-4xl">C</button>
-        <button class="h-20 rounded-3xl bg-slate-700/60 text-4xl">+/-</button>
-        <button class="h-20 rounded-3xl bg-slate-700/60 text-4xl">%</button>
-        <button class="h-20 rounded-3xl bg-orange-500 text-5xl">÷</button>
+      <section class="relative z-10 mt-10 grid grid-cols-4 gap-3">
+        <button class="h-20 rounded-[26px] bg-gradient-to-b from-slate-500/80 to-slate-700/80 text-[34px] shadow-soft">C</button>
+        <button class="h-20 rounded-[26px] bg-gradient-to-b from-slate-500/80 to-slate-700/80 text-[30px] shadow-soft">+/-</button>
+        <button class="h-20 rounded-[26px] bg-gradient-to-b from-slate-500/80 to-slate-700/80 text-[34px] shadow-soft">%</button>
+        <button class="h-20 rounded-[26px] bg-gradient-to-b from-amber-500 to-orange-500 text-[42px] shadow-ember">÷</button>
 
-        <button class="h-20 rounded-3xl bg-slate-800/80 text-4xl">7</button>
-        <button class="h-20 rounded-3xl bg-slate-800/80 text-4xl">8</button>
-        <button class="h-20 rounded-3xl bg-slate-800/80 text-4xl">9</button>
-        <button class="h-20 rounded-3xl bg-orange-500 text-5xl">×</button>
+        <button class="h-20 rounded-[26px] bg-gradient-to-b from-slate-700/90 to-slate-900/90 text-[34px] shadow-soft">7</button>
+        <button class="h-20 rounded-[26px] bg-gradient-to-b from-slate-700/90 to-slate-900/90 text-[34px] shadow-soft">8</button>
+        <button class="h-20 rounded-[26px] bg-gradient-to-b from-slate-700/90 to-slate-900/90 text-[34px] shadow-soft">9</button>
+        <button class="h-20 rounded-[26px] bg-gradient-to-b from-amber-500 to-orange-500 text-[42px] shadow-ember">×</button>
 
-        <button class="h-20 rounded-3xl bg-slate-800/80 text-4xl">4</button>
-        <button class="h-20 rounded-3xl bg-slate-800/80 text-4xl">5</button>
-        <button class="h-20 rounded-3xl bg-slate-800/80 text-4xl">6</button>
-        <button class="h-20 rounded-3xl bg-orange-500 text-5xl">−</button>
+        <button class="h-20 rounded-[26px] bg-gradient-to-b from-slate-700/90 to-slate-900/90 text-[34px] shadow-soft">4</button>
+        <button class="h-20 rounded-[26px] bg-gradient-to-b from-slate-700/90 to-slate-900/90 text-[34px] shadow-soft">5</button>
+        <button class="h-20 rounded-[26px] bg-gradient-to-b from-slate-700/90 to-slate-900/90 text-[34px] shadow-soft">6</button>
+        <button class="h-20 rounded-[26px] bg-gradient-to-b from-amber-500 to-orange-500 text-[42px] shadow-ember">−</button>
 
-        <button class="h-20 rounded-3xl bg-slate-800/80 text-4xl">1</button>
-        <button class="h-20 rounded-3xl bg-slate-800/80 text-4xl">2</button>
-        <button class="h-20 rounded-3xl bg-slate-800/80 text-4xl">3</button>
-        <button class="h-20 rounded-3xl bg-orange-500 text-5xl">+</button>
+        <button class="h-20 rounded-[26px] bg-gradient-to-b from-slate-700/90 to-slate-900/90 text-[34px] shadow-soft">1</button>
+        <button class="h-20 rounded-[26px] bg-gradient-to-b from-slate-700/90 to-slate-900/90 text-[34px] shadow-soft">2</button>
+        <button class="h-20 rounded-[26px] bg-gradient-to-b from-slate-700/90 to-slate-900/90 text-[34px] shadow-soft">3</button>
+        <button class="h-20 rounded-[26px] bg-gradient-to-b from-amber-500 to-orange-500 text-[42px] shadow-ember">+</button>
 
-        <button class="h-20 col-span-2 rounded-3xl bg-slate-800/80 text-4xl">0</button>
-        <button class="h-20 rounded-3xl bg-slate-700/70 text-5xl">.</button>
-        <button class="h-20 rounded-3xl bg-orange-500 text-5xl">=</button>
+        <button class="h-20 col-span-2 rounded-[26px] bg-gradient-to-r from-slate-700/95 to-slate-900/95 text-[34px] shadow-soft">0</button>
+        <button class="h-20 rounded-[26px] bg-gradient-to-b from-slate-500/80 to-slate-700/80 text-[42px] shadow-soft">.</button>
+        <button class="h-20 rounded-[26px] bg-gradient-to-b from-amber-500 to-orange-500 text-[42px] shadow-ember">=</button>
       </section>
     </main>
 
