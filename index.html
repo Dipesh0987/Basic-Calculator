@@ -76,6 +76,48 @@
       const root = document.documentElement;
       const toggle = document.getElementById("themeToggle");
       const themeIcon = document.getElementById("themeIcon");
+      const keypad = document.querySelector(".grid.grid-cols-4");
+      const expressionDisplay = document.getElementById("expressionDisplay");
+      const resultDisplay = document.getElementById("resultDisplay");
+
+      const calculatorState = {
+        leftOperand: null,
+        operator: null,
+        rightOperand: null,
+        currentInput: "0",
+        justEvaluated: false,
+      };
+
+      const formatDisplayNumber = (value) => {
+        if (value === null || value === undefined || value === "") {
+          return "0";
+        }
+
+        const numeric = Number(value);
+        if (!Number.isFinite(numeric)) {
+          return "Error";
+        }
+
+        return numeric.toLocaleString(undefined, {
+          maximumFractionDigits: 10,
+        });
+      };
+
+      const renderCalculator = () => {
+        const left = calculatorState.leftOperand;
+        const right = calculatorState.rightOperand;
+        const op = calculatorState.operator;
+
+        if (op) {
+          const leftText = formatDisplayNumber(left);
+          const rightText = right !== null ? formatDisplayNumber(right) : formatDisplayNumber(calculatorState.currentInput);
+          expressionDisplay.textContent = `${leftText} ${op} ${rightText}`;
+        } else {
+          expressionDisplay.textContent = formatDisplayNumber(calculatorState.currentInput);
+        }
+
+        resultDisplay.textContent = formatDisplayNumber(calculatorState.currentInput);
+      };
 
       const applyTheme = (isDark) => {
         root.classList.toggle("dark", isDark);
@@ -92,6 +134,8 @@
         applyTheme(isDark);
         localStorage.setItem("calculator-theme", isDark ? "dark" : "light");
       });
+
+      renderCalculator();
     </script>
   </body>
 </html>
